@@ -2,10 +2,10 @@
 {
     public class ComentarioLibro
     {
-        public int Id { get; set; }
-        public int IdLibro { get; set; }
-        public string Comentarios { get; set; }
-        public string Usuario { get; set; }
+        public int id { get; set; }
+        public int id_libro { get; set; }
+        public string comentarios { get; set; }
+        public string usuario { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace L02P02_2022MM652_2022AR652.Data
             modelBuilder.Entity<Libro>()
                 .HasOne(a => a.Autor)
                 .WithMany(l => l.Libros)
-                .HasForeignKey(l => l.IdAutor);
+                .HasForeignKey(l => l.id_autor);
         }
     }
 

@@ -29,6 +29,6 @@ app.UseAuthorization();
 //  Ruta por defecto
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Autores}/{action=Index}/{id?}");
+    pattern: "{controller=Libros}/{action=Index}/{id?}");
 
 app.Run();

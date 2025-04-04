@@ -1,0 +1,37 @@
+﻿@model IEnumerable<L02P02_2022MM652_2022AR652.Models.Libro>
+
+@{
+    ViewData["Title"] = "Lista de Libros";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a href="@Url.Action("Create", "Libros")" class="btn btn-primary">Crear un nuevo libro</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Fecha de Publicación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var libro in Model)
+        {
+            <tr>
+                <td>@libro.nombre</td>
+                <td>@libro.Autor.autor 
+                <td>@libro.descipcion</td>
+                <td>
+                    <a href="@Url.Action("Details", "Libros", new { id = libro.id })" class="btn btn-info">Ver</a>
+                    <a href="@Url.Action("Edit", "Libros", new { id = libro.id })" class="btn btn-warning">Editar</a>
+                    <a href="@Url.Action("Delete", "Libros", new { id = libro.id })" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
