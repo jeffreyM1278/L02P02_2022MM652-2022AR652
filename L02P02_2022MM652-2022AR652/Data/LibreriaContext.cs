@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace L02P02_2022MM652_2022AR652.Data
 {
-    public class LibreriaContext: DbContext
+    public class LibreriaContext : DbContext
     {
         public LibreriaContext(DbContextOptions<LibreriaContext> options) : base(options) { }
 
