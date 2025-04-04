@@ -13,20 +13,19 @@ namespace L02P02_2022MM652_2022AR652.Controllers
             _context = context;
         }
 
-        // GET: Autores
+        
         public IActionResult Index()
         {
-            var lista = _context.Autores.ToList(); // Muestra todos los autores
+            var lista = _context.Autores.ToList(); 
             return View(lista);
         }
 
-        // GET: Autores/Create
+       
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Autores/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Autor autor)

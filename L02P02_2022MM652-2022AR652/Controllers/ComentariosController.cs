@@ -15,7 +15,7 @@ namespace L02P02_2022MM652_2022AR652.Controllers
             _context = context;
         }
 
-        // GET: Comentarios/Libros/5
+        
         public IActionResult Libros(int id)
         {
             var libro = _context.Libros.FirstOrDefault(l => l.id == id);
@@ -24,18 +24,18 @@ namespace L02P02_2022MM652_2022AR652.Controllers
                 return NotFound();
             }
 
-            // Obtener los comentarios del libro
+            
             var comentarios = _context.ComentarioLibros
                 .Where(c => c.id_libro == id)
-                .OrderByDescending(c => c.CreatedAt)  // Ordenar los comentarios por fecha
+                .OrderByDescending(c => c.CreatedAt)  
                 .ToList();
 
-            // Pasar el libro y sus comentarios a la vista
+            
             ViewData["LibroTitulo"] = libro.nombre;
             return View(comentarios);
         }
 
-        // GET: Comentarios/Create/5
+        
         public IActionResult Create(int id)
         {
             var libro = _context.Libros.FirstOrDefault(l => l.id == id);
@@ -48,7 +48,7 @@ namespace L02P02_2022MM652_2022AR652.Controllers
             return View(new ComentarioLibro { id_libro = id });
         }
 
-        // POST: Comentarios/Create
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(ComentarioLibro comentario)
