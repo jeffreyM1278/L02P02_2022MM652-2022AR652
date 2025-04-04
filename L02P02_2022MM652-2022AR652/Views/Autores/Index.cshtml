@@ -1,0 +1,38 @@
+﻿@model IEnumerable<L02P02_2022MM652_2022AR652.Models.Autor>
+
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Autores";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.FirstOrDefault().autor)</th>
+          
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var autor in Model)
+        {
+            <tr>
+                <td>@autor.autor</td>
+      
+                <td>
+                    <a href="@Url.Action("Create", "Autores")" class="btn btn-success">Selecciona autor  </a>
+                    
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 //  Agregamos el DbContext con la cadena de conexión a SQL Server
 builder.Services.AddDbContext<LibreriaContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("libreriaDBconnection")));
 
 //  Agregamos MVC
 builder.Services.AddControllersWithViews();

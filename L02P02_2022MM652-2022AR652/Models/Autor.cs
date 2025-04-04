@@ -2,8 +2,8 @@
 {
     public class Autor
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
+        public int id{ get; set; }
+        public string autor { get; set; }
         public ICollection<Libro> Libros { get; set; }
     }
 }
