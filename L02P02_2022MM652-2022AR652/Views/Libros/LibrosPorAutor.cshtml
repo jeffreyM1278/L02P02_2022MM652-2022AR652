@@ -20,13 +20,13 @@
             <tr>
                 <td>@libro.nombre</td>
                 <td>
-                    <a href="@Url.Action("Details", "Libros", new { id = libro.id })" class="btn btn-info">Ver</a>
-                    <a href="@Url.Action("Edit", "Libros", new { id = libro.id })" class="btn btn-warning">Editar</a>
-                    <a href="@Url.Action("Delete", "Libros", new { id = libro.id })" class="btn btn-danger">Eliminar</a>
+                    <a href="@Url.Action("Details", "Libros", new { id = libro.id })" class="btn btn-info">Seleccionar</a>
+          
                 </td>
             </tr>
         }
+        <a href="@Url.Action("Index", "Autores")" class="btn btn-secondary">Volver a la lista de libros</a>
     </tbody>
 </table>
 
-<a href="@Url.Action("Index", "Libros")" class="btn btn-secondary">Volver a la lista de libros</a>
+

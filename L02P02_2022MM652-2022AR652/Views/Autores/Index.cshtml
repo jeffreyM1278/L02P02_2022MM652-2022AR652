@@ -1,10 +1,5 @@
 ﻿@model IEnumerable<L02P02_2022MM652_2022AR652.Models.Autor>
 
-
-
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
 @{
     ViewData["AutorNombre"] = "Autores";
 }
@@ -15,7 +10,6 @@
     <thead>
         <tr>
             <th>@Html.DisplayNameFor(model => model.FirstOrDefault().autor)</th>
-          
             <th>Acciones</th>
         </tr>
     </thead>
@@ -24,15 +18,12 @@
         {
             <tr>
                 <td>@autor.autor</td>
-      
                 <td>
-                    <a href="@Url.Action("Index", "Libros")" class="btn btn-success">Selecciona autor  </a>
-                    
-                    
+                    <!-- Aquí se pasa el autorId al controlador Libros en la acción LibrosPorAutor -->
+                    <a href="@Url.Action("LibrosPorAutor", "Libros", new { autorId = autor.id })" class="btn btn-success">Seleccionar autor</a>
                 </td>
             </tr>
         }
+
     </tbody>
 </table>
-
-
