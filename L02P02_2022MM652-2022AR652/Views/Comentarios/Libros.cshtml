@@ -1,0 +1,53 @@
+﻿@model IEnumerable<L02P02_2022MM652_2022AR652.Models.ComentarioLibro>
+
+@{
+    ViewData["Title"] = "Comentarios de " + ViewData["LibroTitulo"];
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Mostrar los comentarios existentes -->
+<div>
+    <h3>Comentarios</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Comentario</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var comentario in Model)
+            {
+                <tr>
+                    <td>@comentario.usuario</td>
+                    <td>@comentario.comentarios</td>
+                    <td>@comentario.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Formulario para agregar un nuevo comentario -->
+<h3>Agregar un Comentario</h3>
+<form method="post" action="@Url.Action("Create", "Comentarios")">
+    <input type="hidden" name="id_libro" value="@Context.Request.Query["id"]
+" />
+
+    <div class="form-group">
+        <label for="usuario">Tu nombre</label>
+        <input type="text" name="usuario" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="comentarios">Comentario</label>
+        <textarea name="comentarios" class="form-control" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Agregar Comentario</button>
+</form>
+
+<!-- Enlace para volver a la lista de libros -->
+<a href="@Url.Action("Index", "Libros")" class="btn btn-secondary">Volver a la lista de libros</a>

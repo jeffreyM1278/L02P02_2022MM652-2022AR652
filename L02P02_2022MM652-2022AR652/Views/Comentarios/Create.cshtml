@@ -1,0 +1,25 @@
+﻿@model L02P02_2022MM652_2022AR652.Models.ComentarioLibro
+
+@{
+    ViewData["Title"] = "Agregar Comentario";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" action="@Url.Action("Create", "Comentarios")">
+    <input type="hidden" name="id_libro" value="@Model.id_libro" />
+
+    <div class="form-group">
+        <label for="usuario">Tu nombre</label>
+        <input type="text" name="usuario" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="comentarios">Comentario</label>
+        <textarea name="comentarios" class="form-control" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Agregar Comentario</button>
+</form>
+
+<a href="@Url.Action("Libros", "Comentarios", new { id = Model.id_libro })" class="btn btn-secondary">Volver a los comentarios</a>
