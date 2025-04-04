@@ -6,10 +6,10 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Autores";
+    ViewData["AutorNombre"] = "Autores";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1>@ViewData["AutorNombre"]</h1>
 
 <table class="table">
     <thead>
@@ -26,7 +26,7 @@
                 <td>@autor.autor</td>
       
                 <td>
-                    <a href="@Url.Action("Create", "Autores")" class="btn btn-success">Selecciona autor  </a>
+                    <a href="@Url.Action("Index", "Libros")" class="btn btn-success">Selecciona autor  </a>
                     
                     
                 </td>

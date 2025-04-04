@@ -6,7 +6,6 @@
         public string nombre { get; set; }
         public string descripcion { get; set; }
         public int id_autor { get; set; }
-        public string precio { get; set; }
         public string estado  { get; set; }
         public Autor Autor { get; set; }
     }
